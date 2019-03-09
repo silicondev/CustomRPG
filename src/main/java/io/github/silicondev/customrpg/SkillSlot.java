@@ -3,7 +3,7 @@ package io.github.silicondev.customrpg;
 public class SkillSlot {
 	private Skill skill;
 	private int level = 0;
-	private int xp = 0;
+	private float xp = 0;
 	private boolean active = false;
 	
 	public SkillSlot(Skill skill) {
@@ -52,7 +52,7 @@ public class SkillSlot {
 		return this.level;
 	}
 	
-	public int getXp() {
+	public float getXp() {
 		return this.xp;
 	}
 	

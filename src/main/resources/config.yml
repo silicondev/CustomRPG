@@ -1,0 +1,105 @@
+# CustomRPG Configuration
+# Made by SiliconDev ##/##/2019
+
+# === LEVELLING ===
+
+min-level: 1
+# Minimum level, do not set less than 0.
+max-level: 100
+# Maximum level, do not set less than minimum level.
+total-level-calculation: "AVERAGE"
+# Will have other options listed here in future updates, for now keep this as "AVERAGE"
+
+# Level notators, these numbers are done in percentages. eg. if min level was 0 and max was 100, 0-10 would be levels 0 through 10, increase max level and you increases the highest level that's noted. Please make sure that each of these adds up as percentages to 100.
+
+level-verylow-min: 0-9
+level-verylow-max: 9
+
+level-low-min: 10-29
+level-low-max: 29
+
+level-medium-min: 30-59
+level-medium-max: 59
+
+level-mediumhigh-min: 60-69
+level-mediumhigh-max: 69
+
+level-high-min: 70-84
+level-high-max: 84
+
+level-veryhigh-min: 85-100
+level-veryhigh-max: 100
+
+
+
+level-verylow: 1-9
+level-low: 10-29
+level-medium: 30-59
+level-mediumhigh: 60-69
+level-high: 70-84
+level-veryhigh: 85-100
+
+# === SKILL SLOTS ===
+
+base-combat-slots: 2
+# Number of slots given to the player by default for combat skills, (Swordsmanship, Archery, etc.)
+base-noncombat-slots: 2
+# Number of slots given to the player by default for non-combat skills, (Fishing, Mining, etc.)
+additional-combat-slots: 1
+# Number of purchasable combat slots.
+combat-slot-cost: 50000
+# Cost of additional combat slots.
+additional-noncombat-slots: 2
+# Number of purchasable non-combat slots.
+noncombat-slot-cost: 30000
+
+# === SKILLS ===
+# Skill xp modifiers, how much xp points is earned for one of the tasks. SET TO 0 TO DISABLE THAT SKILL.
+
+# COMBAT
+xpmod-swordsmanship: 1
+xpmod-axewielding: 2
+xpmod-archery: 1.5
+xpmod-martialarts: 5
+xpmod-spearmanship: 10
+xpmod-alchemy: 20
+# NON-COMBAT
+xpmod-fishing: 10
+xpmod-trading: 20
+xpmod-cooking: 2
+xpmod-farming-breed: 10
+xpmod-farming-kill: 5
+xpmod-farming-crops: 1
+xpmod-exploring: 1
+xpmod-lumberjacking: 1
+xpmod-excavation: 0.5
+xpmod-mining-lowlevel: 1
+xpmod-mining-mediumlevel: 1
+xpmod-mining-highlevel: 1
+xpmod-blacksmithing: 20
+xpmod-toolsmithing: 10
+xpmod-sailing: 1
+xpmod-furnishing-craft: 33.3
+xpmod-furnishing-place: 5
+xpmod-furnishing-break: 1
+
+# === AREA LEVELLING ===
+# Please use the level notators mentioned above to indicate the mob/loot spawning level for each biome. Use "SAFE" to indicate no hostile mobs to spawn in this area.
+
+area-MUSHROOM: "SAFE"
+area-PLAINS: "VERY_LOW"
+area-BEACH: "VERY_LOW"
+area-FOREST: "LOW"
+area-EXTREMEHILLS: "LOW"
+area-ICEPLAINS: "MEDIUM"
+area-SWAMP: "MEDIUM"
+area-SAVANNAH: "MEDIUM"
+area-OCEAN: "MEDIUM"
+area-TAIGA: "MEDIUM_HIGH"
+area-DESERT: "MEDIUM_HIGH"
+area-ROOFEDFOREST: "HIGH"
+area-DEEPOCEAN: "HIGH"
+area-COLDTAIGA: "HIGH"
+area-JUNGLE: "VERY_HIGH"
+area-ICESPIKES: "VERY_HIGH"
+area-MESA: "VERY_HIGH"
