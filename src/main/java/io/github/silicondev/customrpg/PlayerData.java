@@ -34,8 +34,28 @@ public class PlayerData {
 		return this.level;
 	}
 	
-	public SkillSlot getSkill(int index) {
-		return skills.get(index);
+	public SkillSlot getSkillIndex(int index) {
+		return this.skills.get(index);
+	}
+	
+	public SkillSlot getSkill(Skill type) {
+		for (int s = 0; s < skills.size(); s++) {
+			if (this.skills.get(s).getSkill().equals(type)) {
+				return this.skills.get(s);
+			}
+		}
+		
+		return new SkillSlot(Skill.EMPTY);
+	}
+	
+	public boolean addXpForSkill(Skill type, int modSlot) {
+		for (int s = 0; s < skills.size(); s++) {
+			if (skills.get(s).getSkill().equals(type)) {
+				getSkill(type).addXp(type.getXpMod(modSlot));
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public List<SkillSlot> getAllSkills() {

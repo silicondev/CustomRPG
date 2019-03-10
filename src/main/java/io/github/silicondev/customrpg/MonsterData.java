@@ -8,11 +8,10 @@ public class MonsterData {
 	private int level;
 	private LivingEntity entity;
 	
-	public MonsterData(LevelNotator baseLevel, LivingEntity entity) {
+	public MonsterData(LevelNotator baseLevel, LivingEntity entity, int level) {
 		this.entity = entity;
 		this.baseGenLevel = baseLevel;
-		Random rng = new Random();
-		this.level = rng.nextInt((baseGenLevel.getMin() - baseGenLevel.getMax()) + 1) + baseGenLevel.getMin();
+		this.level = level;
 	}
 	
 	public void reRollLevel(LevelNotator newGenLevel) {

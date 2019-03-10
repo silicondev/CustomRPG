@@ -2,6 +2,7 @@ package io.github.silicondev.customrpg;
 
 public enum Skill {
 	
+	EMPTY("Empty", xpSlot.NONE, xpSlot.NONE, xpSlot.NONE, true, SkillType.SKILL_NON_COMBAT, "Empty Slot"),
 	SWORDSMANSHIP("Swordsmanship", xpSlot.SWORD, xpSlot.NONE, xpSlot.NONE, false, SkillType.SKILL_COMBAT, "-"),
 	AXEWIELDING("Axe-Wielding", xpSlot.AXE, xpSlot.NONE, xpSlot.NONE, false, SkillType.SKILL_COMBAT, "-"),
 	ARCHERY("Archery", xpSlot.BOW, xpSlot.NONE, xpSlot.NONE, false, SkillType.SKILL_COMBAT, "-"),
