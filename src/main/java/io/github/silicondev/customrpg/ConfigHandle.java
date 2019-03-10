@@ -3,43 +3,25 @@ package io.github.silicondev.customrpg;
 public class ConfigHandle {
 	CustomRPG plugin;
 	
-	public int minLevel;
-	public int maxLevel;
-	public String levelCalc;
+	public static int minLevel;
+	public static int maxLevel;
+	public static String levelCalc;
 	
-	public int baseComSlots;
-	public int baseNoComSlots;
-	public int addComSlots;
-	public int addNoComSlots;
-	public float comSlotCost;
-	public float noComSlotCost;
-	
-	public LevelNotator areaMUSHROOM;
-	public LevelNotator areaPLAINS;
-	public LevelNotator areaBEACH;
-	public LevelNotator areaFOREST;
-	public LevelNotator areaEXTREMEHILLS;
-	public LevelNotator areaICEPLAINS;
-	public LevelNotator areaSWAMP;
-	public LevelNotator areaSAVANNAH;
-	public LevelNotator areaOCEAN;
-	public LevelNotator areaTAIGA;
-	public LevelNotator areaDESERT;
-	public LevelNotator areaROOFEDFOREST;
-	public LevelNotator areaDEEPOCEAN;
-	public LevelNotator areaCOLDTAIGA;
-	public LevelNotator areaJUNGLE;
-	public LevelNotator areaICESPIKES;
-	public LevelNotator areaMESA;
+	public static int baseComSlots;
+	public static int baseNoComSlots;
+	public static int addComSlots;
+	public static int addNoComSlots;
+	public static float comSlotCost;
+	public static float noComSlotCost;
 	
 	public ConfigHandle(CustomRPG plugin) {
 		this.plugin = plugin;
 	}
 	
 	public void load() {
-		this.minLevel = plugin.getConfig().getInt("min-level");
-		this.maxLevel = plugin.getConfig().getInt("max-level");
-		this.levelCalc = plugin.getConfig().getString("total-level-calculation");
+		minLevel = plugin.getConfig().getInt("min-level");
+		maxLevel = plugin.getConfig().getInt("max-level");
+		levelCalc = plugin.getConfig().getString("total-level-calculation");
 		
 		LevelNotator.VERY_LOW.setMinMax(getAreaInt(plugin.getConfig().getString("level-verylow")));
 		LevelNotator.LOW.setMinMax(getAreaInt(plugin.getConfig().getString("level-low")));
@@ -48,12 +30,12 @@ public class ConfigHandle {
 		LevelNotator.HIGH.setMinMax(getAreaInt(plugin.getConfig().getString("level-high")));
 		LevelNotator.VERY_HIGH.setMinMax(getAreaInt(plugin.getConfig().getString("level-veryhigh")));
 		
-		this.baseComSlots = plugin.getConfig().getInt("base-combat-slots");
-		this.baseNoComSlots = plugin.getConfig().getInt("base-noncombat-slots");
-		this.addComSlots = plugin.getConfig().getInt("additional-combat-slots");
-		this.addNoComSlots = plugin.getConfig().getInt("additional-noncombat-slots");
-		this.comSlotCost = Float.valueOf(plugin.getConfig().getLong("combat-slot-cost"));
-		this.noComSlotCost = Float.valueOf(plugin.getConfig().getLong("noncombat-slot-cost"));
+		baseComSlots = plugin.getConfig().getInt("base-combat-slots");
+		baseNoComSlots = plugin.getConfig().getInt("base-noncombat-slots");
+		addComSlots = plugin.getConfig().getInt("additional-combat-slots");
+		addNoComSlots = plugin.getConfig().getInt("additional-noncombat-slots");
+		comSlotCost = Float.valueOf(plugin.getConfig().getLong("combat-slot-cost"));
+		noComSlotCost = Float.valueOf(plugin.getConfig().getLong("noncombat-slot-cost"));
 		
 		xpSlot.SWORD.setXp(Float.valueOf(plugin.getConfig().getLong("xpmod-swordsmanship")));
 		xpSlot.AXE.setXp(Float.valueOf(plugin.getConfig().getLong("xpmod-axewielding")));
@@ -81,23 +63,23 @@ public class ConfigHandle {
 		xpSlot.PLACE.setXp(Float.valueOf(plugin.getConfig().getLong("xpmod-furnishing-place")));
 		xpSlot.BREAK.setXp(Float.valueOf(plugin.getConfig().getLong("xpmod-furnishing-break")));
 		
-		this.areaMUSHROOM = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaPLAINS = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaBEACH = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaFOREST = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaEXTREMEHILLS = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaICEPLAINS = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaSWAMP = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaSAVANNAH = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaOCEAN = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaTAIGA = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaDESERT = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaROOFEDFOREST = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaDEEPOCEAN = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaCOLDTAIGA = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaJUNGLE = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaICESPIKES = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
-		this.areaMESA = getLevel(plugin.getConfig().getString("area-MUSHROOM"));
+		BiomeLevel.MUSHROOM.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.PLAINS.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.BEACH.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.FOREST.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.EXTREME_HILLS.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.ICE_PLAINS.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.SWAMP.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.SAVANNA.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.OCEAN.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.TAIGA.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.DESERT.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.ROOFED_FOREST.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.DEEP_OCEAN.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.COLD_TAIGA.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.JUNGLE.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.ICE_SPIKES.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
+		BiomeLevel.MESA.setLevel(getLevel(plugin.getConfig().getString("area-MUSHROOM")));
 	}
 	
 	public int[] getAreaInt(String parse) {

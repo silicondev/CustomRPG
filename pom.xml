@@ -3,7 +3,7 @@
   
   <groupId>io.github.silicondev</groupId>
   <artifactId>CustomRPG</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.3-SNAPSHOT</version>
   
   <name>CustomRPG</name>
   <description>Minecraft Plugin - A customizable RPG experience</description>
@@ -25,7 +25,7 @@
     </dependencies>
     
     <build>
-    	<finalName>CustomItemManager</finalName>
+    	<finalName>CustomRPG</finalName>
     	<sourceDirectory>src/main/java</sourceDirectory>
     	<resources>
     		<resource>

@@ -3,17 +3,19 @@ package io.github.silicondev.customrpg;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CustomRPG extends JavaPlugin {
-	public static String pluginName = "CustomItemManager";
+	public static String pluginName = "CustomRPG";
 	public boolean debugMode = false;
-	public static String version = "Beta 0.2.1";
+	public static String version = "inDev 0.0.3";
 	
 	ConfigHandle config = new ConfigHandle(this);
 	CommandOut comOut = new CommandOut(this);
+	
 	static List<CommandCRPG> commands = new ArrayList<CommandCRPG>();
+	static List<PlayerData> players = new ArrayList<PlayerData>();
+	static List<MonsterData> monsters = new ArrayList<MonsterData>();
 	
 	public void onEnable() {
 		getLogger().info("Startup Initialized!");
